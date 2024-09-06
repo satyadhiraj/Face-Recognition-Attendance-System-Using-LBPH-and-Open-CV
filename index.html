@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Face Recognition System</h1>
+        <p>{{ message }}</p>
+        <form action="/register_face" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" required>
+            <label for="class">Class:</label>
+            <input type="text" id="class" name="class" required>
+            <button type="submit">Register Face</button>
+        </form>
+        <form action="/train_face_recognizer">
+            <button type="submit">Train Face Recognizer</button>
+        </form>
+        <form action="/take_attendance">
+            <button type="submit">Take Attendance</button>
+        </form>
+    </div>
+</body>
+</html>
